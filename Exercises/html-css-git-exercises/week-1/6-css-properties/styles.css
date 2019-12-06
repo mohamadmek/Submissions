@@ -1,20 +1,20 @@
 /* Add your CSS code below */
 .link {
-    color: red;
-    font-weight: bold;
-    text-decoration: none;
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
 }
 .message__time {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .message--unread {
-    border-left: 1px solid blue;
+  border-left: 1px solid blue;
 }
-.message__time--old {
-    opacity: 0.5;
+.message:first-child {
+  opacity: 0.5;
 }
 
 .message {
-    line-height: 30px;
+  line-height: 30px;
 }
