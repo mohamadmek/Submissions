@@ -61,7 +61,7 @@ On the next page, check to make sure the correct branch is showing where the arr
 
 When you're ready to create the pull request, click the **Create Pull Request** button.
 
-![Screenshot of the new pull request screen in GitHub](/Exercises/html-css-git-exercises/images/18/pull-request-2.png)
+![sScreenshot of the new pull request screen in GitHub](/Exercises/html-css-git-exercises/images/18/pull-request-2.png)
 
 Now that you've created the pull request, make some final checks and then merge it.
 
