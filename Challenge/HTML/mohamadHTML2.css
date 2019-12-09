@@ -1,0 +1,27 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #123123;
+  color: #fff;
+}
+
+.menu {
+  background-color: black;
+  padding: 5px 0;
+  padding-left: 10px;
+}
+.sub-menu {
+  display: inline-block;
+  padding-right: 10px;
+  color: #fff;
+}
+.list {
+  padding-left: 40px;
+}
+
+ul > li {
+  font-size: 22px;
+}
+a {
+  padding-left: 40px;
+}
