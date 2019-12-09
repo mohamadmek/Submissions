@@ -13,7 +13,7 @@
 * **Experience:**
 
   - Now getting my real experience with Codi
-  - It will take up to 6 months
+  - It will take up to 6 months.
 
 - **Hobbbies:**
 
