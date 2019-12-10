@@ -1,1 +1,36 @@
 /* Add your own CSS code below */
+@media all and (min-width: 992px) {
+  .hero__title {
+    font-size: 50px;
+  }
+  .main-nav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media all and (min-width: 767px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .views {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .view-list__item1,
+  .view-list__item2 {
+    margin: 0 7px;
+  }
+  .views__all {
+    float: right;
+  }
+  .site-content {
+    display: flex;
+    justify-content: center;
+  }
+}
