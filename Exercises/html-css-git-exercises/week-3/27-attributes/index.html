@@ -42,7 +42,7 @@
               <legend>Billing Address</legend>
               <p>
                 <label for="billing-address-1">Address Line 1</label>
-                <input type="text" name="billing-address-1" id="billing-address-1" />
+                <input type="text" name="billing-address-1" id="billing-address-1" required />
               </p>
               <p>
                 <label for="billing-address-2">Address Line 2</label>
@@ -81,7 +81,15 @@
               </p>
               <p>
                 <label for="delivery-country">Country</label>
-                <input type="text" name="delivery-country" id="delivery-country" />
+                <input
+                  type="text"
+                  name="delivery-country"
+                  value="united kingdom"
+                  readonly
+                  checked
+                  disabled
+                  id="delivery-country"
+                />
               </p>
               <fieldset>
                 <legend>Delivery Options</legend>
