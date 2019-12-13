@@ -10,7 +10,7 @@ body {
 .container {
   display: inline-block;
   width: 100%;
-  max-width: 1160px;
+  max-width: 1020px;
   padding: 20px 30px 0 30px;
 }
 
@@ -48,6 +48,10 @@ nav {
   padding-right: 44px;
 }
 
+.media {
+  display: flex;
+  flex-direction: row;
+}
 /* header */
 
 main {
@@ -82,10 +86,39 @@ main {
 }
 
 .padd {
-  padding: 0 10px;
   line-height: 26px;
 }
 
 .btn {
   padding: 5px 7px;
+  cursor: pointer;
+}
+
+@media all and (max-width: 700px) {
+  .header-img {
+    display: none;
+  }
+}
+.menu-title {
+  padding-left: 0 !important;
+}
+
+.main-menu {
+  width: 100%;
+}
+.media {
+  flex-direction: column;
+}
+.flex-col {
+  flex-direction: column;
+}
+nav {
+  display: none;
+}
+.container {
+  max-width: 400px;
+}
+
+.block-title {
+  padding-left: 0 !important;
 }

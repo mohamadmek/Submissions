@@ -180,7 +180,7 @@ small {
 sub,
 sup {
   font-size: 75%;
-  line-height: 0;
+
   position: relative;
   vertical-align: baseline;
 }
@@ -448,3 +448,183 @@ template {
 [hidden] {
   display: none;
 }
+
+header > div {
+  background-color: #999999;
+  display: flex;
+  padding-left: 150px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+hgroup {
+  color: red;
+}
+#contact > h3 {
+  display: none;
+}
+.contacts {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  width: 100%;
+  max-width: 650px;
+  line-height: 25px !important;
+  overflow: hidden;
+}
+
+.contact {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.contact-type {
+  width: 22%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  background-color: red;
+  color: #fff;
+}
+.contact-value {
+  text-align: left;
+  background-color: black;
+  width: 78%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  color: red;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1100px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px !important;
+  overflow: hidden;
+}
+#about {
+  width: 50%;
+  text-align: left;
+}
+#competencies {
+  margin-left: 0px;
+  width: 50%;
+  text-align: left;
+}
+#experiences {
+  text-align: left;
+  width: 50%;
+}
+#education {
+  text-align: left;
+  width: 50%;
+}
+#hobbies {
+  text-align: left;
+  width: 50%;
+}
+h3 {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 15px;
+}
+h3:before {
+  content: "• ";
+  font-size: 2em !important;
+  color: red;
+}
+
+.skill {
+  background-color: #cccccc;
+  margin-top: 3px;
+  padding: 7px 0;
+  width: 100%;
+  border-radius: 5px;
+}
+.skill > span {
+  color: #fff;
+  padding: 3px 0;
+  background-color: red;
+  margin-left: 2px;
+  padding-right: 60%;
+}
+.skills-secondary {
+  margin-top: 30px;
+}
+
+.skills-secondary .skill > span {
+  opacity: 0.5;
+}
+
+.experience > h4 {
+  line-height: 0px;
+}
+.experience-type {
+  color: red;
+}
+.experience-institution {
+  color: red;
+}
+
+.experience-date-separator {
+  color: red;
+}
+.experience-details {
+  color: #cacaca;
+}
+
+@media all and (max-width: 1228px) {
+  .contacts {
+    display: none;
+  }
+}
+
+@media all and (max-width: 550px) {
+  header > div {
+    flex-direction: column;
+    padding-left: 30px;
+    overflow: hidden;
+  }
+  .content {
+    margin: 0;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #about {
+    width: 100%;
+    text-align: left;
+  }
+  #competencies {
+    width: 100%;
+    text-align: left;
+  }
+  #experiences {
+    text-align: left;
+    width: 100%;
+  }
+  #education {
+    text-align: left;
+    width: 100%;
+  }
+  #hobbies {
+    text-align: left;
+    width: 100%;
+  }
+  .contacts {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+}
+
+/* @media all and (max-width: 300px) {
+  .content {
+    max-width: 250px;;
+  }
+} */

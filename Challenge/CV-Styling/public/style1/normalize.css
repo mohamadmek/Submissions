@@ -448,3 +448,60 @@ template {
 [hidden] {
   display: none;
 }
+
+.menu {
+  background-color: #999999;
+  display: flex;
+  padding-left: 150px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+hgroup {
+  color: red;
+}
+
+.contacts {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  width: 100%;
+  max-width: 650px;
+  line-height: 25px !important;
+}
+
+.contact {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.contact-type {
+  width: 22%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  background-color: red;
+  color: #fff;
+}
+.contact-value {
+  background-color: black;
+  width: 78%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  color: red;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#about {
+  width: 50%;
+}
+#competencies {
+  width: 50%;
+}
