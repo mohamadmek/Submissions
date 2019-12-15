@@ -460,12 +460,10 @@ header > div {
 hgroup {
   color: red;
 }
-#contact > h3 {
-  display: none;
-}
+
 .contacts {
   position: absolute;
-  top: 30px;
+  top: 23px;
   right: 0px;
   width: 100%;
   max-width: 650px;
@@ -497,134 +495,127 @@ hgroup {
   margin: 0;
   color: red;
 }
-
-.content {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1100px;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 15px !important;
-  overflow: hidden;
+.contact-value a {
+  color: red;
+  text-decoration: none;
 }
+
+#contact > h3 {
+  display: none;
+}
+#wrapper {
+  text-align: center;
+}
+.content {
+  display: flex;
+  text-align: left;
+  padding: 0 150px;
+  flex-wrap: wrap;
+}
+
 #about {
   width: 50%;
-  text-align: left;
 }
 #competencies {
-  margin-left: 0px;
   width: 50%;
-  text-align: left;
 }
 #experiences {
-  text-align: left;
   width: 50%;
 }
 #education {
-  text-align: left;
   width: 50%;
 }
 #hobbies {
-  text-align: left;
   width: 50%;
 }
-h3 {
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 15px;
+.content section p {
+  padding-right: 15px;
 }
-h3:before {
-  content: "• ";
-  font-size: 2em !important;
+.content section h3 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #999999;
+}
+.content section h3::before {
+  padding-right: 8px;
+  content: "•";
   color: red;
 }
-
 .skill {
+  border-radius: 2px;
   background-color: #cccccc;
-  margin-top: 3px;
-  padding: 7px 0;
-  width: 100%;
-  border-radius: 5px;
+  margin-top: 7px;
+  padding: 10px 0;
 }
-.skill > span {
-  color: #fff;
-  padding: 3px 0;
+.skill span {
   background-color: red;
-  margin-left: 2px;
-  padding-right: 60%;
+  padding: 5px 0;
+  border-radius: 5px;
+  padding-right: 50%;
+  margin-left: 5px;
+  color: #fff;
 }
 .skills-secondary {
-  margin-top: 30px;
-}
-
-.skills-secondary .skill > span {
-  opacity: 0.5;
-}
-
-.experience > h4 {
-  line-height: 0px;
-}
-.experience-type {
-  color: red;
-}
-.experience-institution {
-  color: red;
-}
-
-.experience-date-separator {
-  color: red;
+  opacity: 0.7;
 }
 .experience-details {
-  color: #cacaca;
+  color: #c6c6c6;
 }
-
-@media all and (max-width: 1228px) {
-  .contacts {
+div > h4 {
+  color: red;
+}
+@media all and (max-width: 1226px) {
+  #contact {
     display: none;
   }
 }
 
-@media all and (max-width: 550px) {
-  header > div {
-    flex-direction: column;
-    padding-left: 30px;
-    overflow: hidden;
-  }
+@media all and (max-width: 800px) {
   .content {
-    margin: 0;
-    flex-direction: column;
-    overflow: hidden;
+    padding: 0 50px;
   }
-
-  #about {
-    width: 100%;
-    text-align: left;
-  }
-  #competencies {
-    width: 100%;
-    text-align: left;
-  }
-  #experiences {
-    text-align: left;
-    width: 100%;
-  }
-  #education {
-    text-align: left;
-    width: 100%;
-  }
-  #hobbies {
-    text-align: left;
-    width: 100%;
-  }
-  .contacts {
-    width: 100%;
+}
+@media all and (max-width: 600px) {
+  #contact {
     display: block;
     position: relative;
   }
+  .content {
+    flex-direction: column;
+  }
+
+  header > div {
+    flex-direction: column;
+    padding-left: 20px !important;
+  }
+  #contact {
+    display: block;
+  }
+  .content section {
+    width: 100% !important;
+    line-height: 1.3em;
+  }
+  .content {
+    padding: 0 50px !important;
+  }
 }
 
-/* @media all and (max-width: 300px) {
+@media all and (max-width: 350px) {
   .content {
-    max-width: 250px;;
+    padding: 0 15px !important;
   }
-} */
+  .contact-value {
+    color: #000;
+  }
+  hgroup {
+    text-align: left;
+  }
+  hgroup > h1 {
+    font-size: 1.5em;
+  }
+  figure {
+    text-align: left;
+  }
+  .contact-value {
+    background-color: #fff;
+  }
+}
