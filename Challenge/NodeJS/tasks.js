@@ -15,6 +15,8 @@ function startApp(name) {
   console.log(`Welcome to ${name}'s application!`);
   console.log("--------------------");
 }
+/* Array of tasks*/
+const listOfTasks = [];
 
 /**
  * Decides what to do depending on the data that was received
@@ -81,6 +83,16 @@ function help() {
 function quit() {
   console.log("Quitting now, goodbye!");
   process.exit();
+}
+/**
+ * list all tasks
+ *
+ * @returns {void}
+ */
+function list() {
+  for (let i = 0; i < listOfTasks.length(); i++) {
+    console.log(`${i + 1}-${listOfTasks[i]}`);
+  }
 }
 
 // The following line starts the application
