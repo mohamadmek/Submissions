@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
 import cloudy from "../src/img/weather-icons/partlycloudy.svg";
-export default function TodayWeather() {
+export default function TodayWeather(props) {
   return (
     <div className="container">
       <div className="today-container">
         <div className="today-icon">
           <img className="img" src={cloudy} alt="storm icon" />
         </div>
-        <div className="today-txt">overcast clouds</div>
+        <div className="today-txt">{props.description}</div>
         <div className="mt-25">
           <span className="bold">Temperature</span>10 to 11C
         </div>
