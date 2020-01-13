@@ -50,12 +50,14 @@ nav {
 
 .container {
   padding-top: 30px;
-  padding-bottom: 100px;
   background-color: #9cc2f7;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.extend {
+  padding-bottom: 100px;
 }
 .today-container {
   display: flex;
