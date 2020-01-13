@@ -40,6 +40,10 @@ function onDataReceived(text) {
     hello();
   } else if (text === "help\n") {
     help();
+  } else if (text === "list") {
+    list();
+  } else if (text === "add") {
+    add(text);
   } else {
     unknownCommand(text);
   }
@@ -92,6 +96,20 @@ function quit() {
 function list() {
   for (let i = 0; i < listOfTasks.length(); i++) {
     console.log(`${i + 1}-${listOfTasks[i]}`);
+  }
+}
+
+/**
+ * @param  {string} task the text received
+ * add new task
+ *
+ * @returns {void}
+ */
+function add(task) {
+  if (task == "") {
+    console.log(Error);
+  } else {
+    listOfTasks.push(task);
   }
 }
 

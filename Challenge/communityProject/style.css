@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+
+.header-img {
+  background: url("./public/header-img2.png") no-repeat center center/contain;
+  height: 700px;
+  width: 100%;
+}
+
+/* /header */
