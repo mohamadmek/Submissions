@@ -9,6 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      cityName: "",
       description: "",
       today: {
         temp: "",
@@ -20,7 +21,15 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  onSubmit = async txt => {
+    console.log("text", txt);
+    this.setState({
+      cityName: txt
+    });
+    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${txt}&cnt=8&units=metric&appid=16e9b24a3bbd12706f0661ba7c4a48d1`;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
     this.setState({
       description: FakeWeather.list[0].weather[0].description,
       today: {
@@ -31,12 +40,12 @@ class App extends Component {
         pressure: FakeWeather.list[0].main.pressure
       }
     });
-  }
+  };
 
   render() {
     return (
       <div className="app">
-        <Nav></Nav>
+        <Nav onSubmit={this.onSubmit}></Nav>
         <TodayWeather
           description={this.state.description}
           tempMin={this.state.today.tempMin}
@@ -49,5 +58,5 @@ class App extends Component {
     );
   }
 }
-
+//16e9b24a3bbd12706f0661ba7c4a48d1
 export default App;

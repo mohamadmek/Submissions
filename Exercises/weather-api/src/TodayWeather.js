@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import cloudy from "../src/img/weather-icons/partlycloudy.svg";
 export default function TodayWeather(props) {
-  console.log(props);
   return (
     <div className="container">
       <div className="today-container">
