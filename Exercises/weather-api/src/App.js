@@ -9,28 +9,42 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      description: "h"
+      description: "",
+      today: {
+        temp: "",
+        tempMin: "",
+        tempMax: "",
+        humidity: "",
+        pressure: ""
+      }
     };
   }
 
-  async componentDidMount() {
-    const response = await fetch(
-      "https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22"
-    );
-    const data = await response.json();
-    console.log(data);
-    this.setState = {
-      description: ""
-    };
+  componentDidMount() {
+    this.setState({
+      description: FakeWeather.list[0].weather[0].description,
+      today: {
+        temp: FakeWeather.list[0].main.temp,
+        tempMax: FakeWeather.list[0].main.temp_max,
+        tempMin: FakeWeather.list[0].main.temp_min,
+        humidity: FakeWeather.list[0].main.humidity,
+        pressure: FakeWeather.list[0].main.pressure
+      }
+    });
   }
 
   render() {
     return (
       <div className="app">
-        {/* <Nav></Nav> */}
-        <span>{this.state.description}</span>
-        {/*  <TodayWeather description={this.state.description}></TodayWeather> */}
-        {/*  <HourlyWeather></HourlyWeather> */}
+        <Nav></Nav>
+        <TodayWeather
+          description={this.state.description}
+          tempMin={this.state.today.tempMin}
+          tempMax={this.state.today.tempMax}
+          pressure={this.state.today.pressure}
+          humidity={this.state.today.humidity}
+        ></TodayWeather>
+        <HourlyWeather temp={this.state.today.temp}></HourlyWeather>
       </div>
     );
   }
