@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
-import cloudy from "../src/img/weather-icons/partlycloudy.svg";
 export default function TodayWeather(props) {
-  console.log(props);
+  const container = document.getElementsByClassName("container");
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{ backgroundColor: props.backgroundPicker(props.nbID) }}
+    >
       <div className="today-container">
         <div className="today-icon">
           <img className="img" src={props.icon(props.nbID)} alt="storm icon" />

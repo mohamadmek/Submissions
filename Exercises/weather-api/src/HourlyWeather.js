@@ -3,7 +3,10 @@ import "./App.css";
 import Hours from "./Hours";
 export default function HourlyWeather(props) {
   return (
-    <div className="container extend">
+    <div
+      className="container extend"
+      style={{ backgroundColor: props.backgroundPicker(props.nbID) }}
+    >
       <div className="hourly-title">HOURLY</div>
       <div className="row">
         {props.list.map(list => (

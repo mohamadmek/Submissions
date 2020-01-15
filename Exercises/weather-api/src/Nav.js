@@ -13,7 +13,7 @@ export default class Nav extends React.Component {
 
   render() {
     return (
-      <nav>
+      <nav style={{ backgroundColor: this.props.navColor(this.props.nbID) }}>
         <label className="label-city">
           <input
             type="text"
@@ -28,6 +28,9 @@ export default class Nav extends React.Component {
           type="submit"
           handlePress={this.props.handle}
           onClick={this.onSubmit}
+          style={{
+            backgroundColor: this.props.buttonBackground(this.props.nbID)
+          }}
         >
           FIND WEATHER
         </button>

@@ -90,6 +90,29 @@ class App extends Component {
     }
   };
 
+  backgroundPicker = nb => {
+    if (nb >= 300 && nb < 800) {
+      return "#9EBAD5";
+    } else {
+      return "#2490E1";
+    }
+  };
+  navColor = nb => {
+    if (nb >= 300 && nb < 800) {
+      return "#6C83AA";
+    } else {
+      return "#246CD7";
+    }
+  };
+
+  buttonBackground = nb => {
+    if (nb >= 300 && nb < 800) {
+      return "#575BAA";
+    } else {
+      return "#134DB1";
+    }
+  };
+
   render() {
     return (
       <div className="app">
@@ -97,6 +120,9 @@ class App extends Component {
           onSubmit={this.onSubmit}
           cityName={this.state.cityName}
           handle={this.handle}
+          navColor={this.navColor}
+          nbID={this.state.today.nbId}
+          buttonBackground={this.buttonBackground}
         ></Nav>
         <TodayWeather
           description={this.state.today.description}
@@ -106,8 +132,14 @@ class App extends Component {
           humidity={this.state.today.humidity}
           icon={this.icon}
           nbID={this.state.today.nbId}
+          backgroundPicker={this.backgroundPicker}
         ></TodayWeather>
-        <HourlyWeather list={this.state.list} icon={this.icon}></HourlyWeather>
+        <HourlyWeather
+          list={this.state.list}
+          icon={this.icon}
+          nbID={this.state.today.nbId}
+          backgroundPicker={this.backgroundPicker}
+        ></HourlyWeather>
       </div>
     );
   }

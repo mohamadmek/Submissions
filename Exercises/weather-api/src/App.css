@@ -1,7 +1,14 @@
 .app {
   transition: background-color 1s ease-in;
 }
-
+.sunny {
+  background-color: #2490e1 !important;
+}
+.rainy {
+  background-color: #9ebad5 !important;
+}
+/* sun #2490E1  #246CD7*/
+/* rain #9EBAD5  #6C83AA*/
 .app__header,
 .app__main {
   width: 100%;
@@ -54,6 +61,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background-color 1s ease-in-out;
 }
 .extend {
   padding-bottom: 100px;
