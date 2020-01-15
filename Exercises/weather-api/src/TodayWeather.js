@@ -11,7 +11,7 @@ export default function TodayWeather(props) {
         <div className="today-txt">{props.description}</div>
         <div className="mt-25">
           <span className="bold">Temperature</span>
-          {props.tempMin}F to {props.tempMax}F
+          {props.tempMin}C to {props.tempMax}C
         </div>
         <div className="mt-25">
           <span className="bold">Humidity</span> {props.humidity}%

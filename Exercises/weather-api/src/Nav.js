@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { render } from "react-dom";
 export default class Nav extends React.Component {
   state = {
     input: "london"
@@ -19,7 +18,7 @@ export default class Nav extends React.Component {
           <input
             type="text"
             name="city"
-            value={this.state.value}
+            value={this.state.input}
             className="city"
             onChange={this.onInput}
           ></input>
