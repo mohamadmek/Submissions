@@ -23,7 +23,12 @@ export default class Nav extends React.Component {
             onChange={this.onInput}
           ></input>
         </label>
-        <button className="btn-search" type="submit" onClick={this.onSubmit}>
+        <button
+          className="btn-search"
+          type="submit"
+          handlePress={this.props.handle}
+          onClick={this.onSubmit}
+        >
           FIND WEATHER
         </button>
       </nav>

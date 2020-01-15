@@ -7,7 +7,12 @@ export default function HourlyWeather(props) {
       <div className="hourly-title">HOURLY</div>
       <div className="row">
         {props.list.map(list => (
-          <Hours time={list.dt_txt.split(" ")[1]} temp={list.main.temp} />
+          <Hours
+            time={list.dt_txt.split(" ")[1]}
+            temp={list.main.temp}
+            nbId={list.weather[0].id}
+            icon={props.icon}
+          />
         ))}
       </div>
     </div>
