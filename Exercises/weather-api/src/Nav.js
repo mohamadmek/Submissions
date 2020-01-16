@@ -4,13 +4,20 @@ export default class Nav extends React.Component {
   state = {
     input: "london"
   };
+
   onInput = e => this.setState({ input: e.target.value });
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state.input);
+    let city = document.querySelector(".city");
+    this.props
+      .onSubmit(this.state.input)
+      .catch(error => (city.style.borderColor = "red"));
   };
-
+  border = () => {
+    let city = document.querySelector(".city");
+    city.style.borderColor = "#ccc";
+  };
   render() {
     return (
       <nav style={{ backgroundColor: this.props.navColor(this.props.nbID) }}>
@@ -21,12 +28,12 @@ export default class Nav extends React.Component {
             value={this.state.input}
             className="city"
             onChange={this.onInput}
+            onClick={this.border}
           ></input>
         </label>
         <button
           className="btn-search"
           type="submit"
-          handlePress={this.props.handle}
           onClick={this.onSubmit}
           style={{
             backgroundColor: this.props.buttonBackground(this.props.nbID)

@@ -1,26 +1,3 @@
-.app {
-  transition: background-color 1s ease-in;
-}
-.sunny {
-  background-color: #2490e1 !important;
-}
-.rainy {
-  background-color: #9ebad5 !important;
-}
-/* sun #2490E1  #246CD7*/
-/* rain #9EBAD5  #6C83AA*/
-.app__header,
-.app__main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  font-family: "Raleway", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /*  Search bar */
 * {
   font-family: "Raleway", sans-serif;
@@ -34,11 +11,10 @@ nav {
 
 .city {
   background-color: #7b88dc;
-  border: none;
   color: #fff;
   margin-left: 15px;
   font-size: 17px;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
   margin-right: 5px;
 }
 

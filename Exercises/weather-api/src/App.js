@@ -13,7 +13,7 @@ import mostlycloudy from "../src/img/weather-icons/mostlycloudy.svg";
 //import partlycloudy from "../src/img/weather-icons/storm.svg";
 import rain from "../src/img/weather-icons/rain.svg";
 import snow from "../src/img/weather-icons/snow.svg";
-import { isEmpty } from "lodash";
+// import { isEmpty } from "lodash";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -40,14 +40,18 @@ class App extends Component {
       }
     });
   }
+  // all the the temps with this function seems to be wrong so i did not use it
+  // toCelsius = (nb)=>{
+  //   return Math.round(parseFloat(nb) - 273.15);
+  // }
 
-  handle = () => {
-    const cityName = this.state.cityName;
-    let cond = true;
-    if (isEmpty(cityName)) {
-      return (cond = false);
-    }
-  };
+  // handle = () => {
+  //   const cityName = this.state.cityName;
+  //   let cond = true;
+  //   if (isEmpty(cityName)) {
+  //     return (cond = false);
+  //   }
+  // };
 
   onSubmit = async e => {
     this.setState({
@@ -133,6 +137,7 @@ class App extends Component {
           icon={this.icon}
           nbID={this.state.today.nbId}
           backgroundPicker={this.backgroundPicker}
+          toCelsius={this.toCelsius}
         ></TodayWeather>
         <HourlyWeather
           list={this.state.list}

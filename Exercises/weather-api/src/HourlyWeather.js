@@ -9,8 +9,9 @@ export default function HourlyWeather(props) {
     >
       <div className="hourly-title">HOURLY</div>
       <div className="row">
-        {props.list.map(list => (
+        {props.list.map((list, index) => (
           <Hours
+            key={index}
             time={list.dt_txt.split(" ")[1]}
             temp={list.main.temp}
             nbId={list.weather[0].id}

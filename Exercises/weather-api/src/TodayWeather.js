@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 export default function TodayWeather(props) {
-  const container = document.getElementsByClassName("container");
   return (
     <div
       className="container"
