@@ -39,3 +39,19 @@
 
 11- DELETE from students
     WHERE Name = "Layal"
+
+12- CREATE TABLE data (
+    Name TEXT,
+    Cname TEXT,
+    Cdate TEXT
+    )
+
+    SELECT employees.Name
+    FROM employees
+    INNER JOIN companies ON employees.Company=companies.name
+    WHERE companies.date < 2000 
+
+13- SELECT companies.name
+    FROM companies
+    INNER JOIN employees ON companies.Name=employees.Company
+    WHERE employees.Role = "Graphic Designer"
