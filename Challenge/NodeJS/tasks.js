@@ -141,13 +141,21 @@ function add(task) {
  * @returns {void}
  */
 function remove(task) {
-  console.log(task[1]);
-  if (task.length == 1) {
+  if (task[1] == 1 && listOfTasks.length == 1) {
     listOfTasks.pop();
-    console.log("removed last task");
-  } else {
-    listOfTasks.splice(task[1] - 1, 1);
     console.log("removed");
+  } else {
+    if (task.length == 1) {
+      listOfTasks.pop();
+      console.log("removed last task");
+    } else {
+      if (task[1] > task.length || task[1] < task.length) {
+        console.log("number does not exist");
+      } else {
+        listOfTasks.splice(task[1] - 1, 1);
+        console.log("removed  " + task[1]);
+      }
+    }
   }
 }
 
