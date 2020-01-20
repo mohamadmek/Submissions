@@ -49,6 +49,8 @@ function onDataReceived(text) {
     add(textArray);
   } else if (word === "remove") {
     remove(textArray);
+  } else if (word === "edit") {
+    edit(textArray);
   } else {
     unknownCommand(word);
   }
@@ -96,7 +98,8 @@ function help() {
     help (to see all commands)
     list (to see tasks)
     add anything (to add tasks)
-    remove (without anything remove last task with a number remove based on number)`
+    remove (without anything remove last task with a number remove based on number)
+    edit (without anything to edit last task with number to specify wich task)`
   );
 }
 
@@ -135,7 +138,7 @@ function add(task) {
 }
 
 /**
- * @param  {string} task the text received
+ * @param  {Array} task the text received
  * remove a task
  *
  * @returns {void}
@@ -149,11 +152,38 @@ function remove(task) {
       listOfTasks.pop();
       console.log("removed last task");
     } else {
-      if (task[1] > task.length || task[1] < task.length) {
+      if (task[1] > listOfTasks.length || task[1] < listOfTasks.length) {
         console.log("number does not exist");
       } else {
         listOfTasks.splice(task[1] - 1, 1);
         console.log("removed  " + task[1]);
+      }
+    }
+  }
+}
+
+/**
+ * @param  {Array} task the text received
+ * remove a task
+ *
+ * @returns {void}
+ */
+function edit(task) {
+  if (task.length == 1) {
+    console.log("enter something to replace");
+  } else {
+    console.log(task.length);
+    if (task.length == 2) {
+      listOfTasks[task.length - 1] = task[1];
+      console.log("edit complete");
+    } else if (task.length == 3) {
+      if (
+        task[1] - 1 > listOfTasks.length ||
+        task[1] < listOfTasks.length - 1
+      ) {
+        console.log("task not found");
+      } else {
+        listOfTasks[task[1] - 1] = task[2];
       }
     }
   }
