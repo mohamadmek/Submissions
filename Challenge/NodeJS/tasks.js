@@ -1,3 +1,4 @@
+const fs = require("fs");
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -17,6 +18,10 @@ function startApp(name) {
 }
 /* Array of tasks*/
 let listOfTasks = ["[✓]clean", "[ ]sleep", "[ ]getmilk"];
+fs.readFile("./database.json", function(err, data) {
+  if (err) throw err;
+  let response = JSON.parse(data);
+});
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
