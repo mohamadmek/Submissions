@@ -15,8 +15,6 @@ function startApp(name) {
   console.log(`Welcome to ${name}'s application!`);
   console.log("--------------------");
 }
-/* Array of tasks*/
-const listOfTasks = [];
 
 /**
  * Decides what to do depending on the data that was received
@@ -75,7 +73,10 @@ function hello() {
  */
 function help() {
   console.log(
-    "Available commands are:\n hello (to welcome) \n quit or exit (to exit application) "
+    `Available commands are:
+    hello (to welcome)
+    quit or exit (to exit application)
+    help (to see all commands)`
   );
 }
 
@@ -93,6 +94,8 @@ function quit() {
  *
  * @returns {void}
  */
+/* Array of tasks*/
+const listOfTasks = [];
 function list() {
   for (let i = 0; i < listOfTasks.length(); i++) {
     console.log(`${i + 1}-${listOfTasks[i]}`);
