@@ -89,7 +89,7 @@ function hello(text) {
 function help() {
   console.log(
     `Available commands are:
-    hello (to welcome)
+    hello or hello yourName (to welcome)
     quit or exit (to exit application)
     help (to see all commands)`
   );
