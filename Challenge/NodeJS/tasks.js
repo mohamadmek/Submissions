@@ -114,4 +114,4 @@ function add(task) {
 }
 
 // The following line starts the application
-startApp("mohamad meksasi");
+startApp("Mohamad Meksasi");
