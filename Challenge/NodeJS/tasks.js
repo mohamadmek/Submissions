@@ -32,18 +32,23 @@ function startApp(name) {
  * @returns {void}
  */
 function onDataReceived(text) {
-  if (text === "quit\n" || text === "exit\n") {
+  // text = text.replace(/\n/gi, "")
+  text = text.trim();
+  let textArray = text.split(" ");
+  console.log(textArray);
+  let word = textArray[0];
+  if (word === "quit\n" || word === "exit\n") {
     quit();
-  } else if (text === "hello\n") {
-    hello();
-  } else if (text === "help\n") {
+  } else if (word === "hello") {
+    hello(textArray);
+  } else if (word === "help") {
     help();
-  } else if (text === "list") {
+  } else if (word === "list") {
     list();
-  } else if (text === "add") {
-    add(text);
+  } else if (word === "add") {
+    add(word);
   } else {
-    unknownCommand(text);
+    unknownCommand(word);
   }
 }
 
@@ -63,9 +68,19 @@ function unknownCommand(c) {
  *
  * @returns {void}
  */
-function hello() {
-  console.log("hello!");
+function hello(text) {
+  if (text.length == 1) {
+    console.log(text[0] + "!");
+  } else {
+    const txt = text[1] + "!";
+    console.log("hello", txt);
+  }
 }
+
+// function onDataReceived() {
+//   console.log("hello!");
+// }
+
 /**
  * Show all available commands
  *
