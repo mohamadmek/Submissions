@@ -47,6 +47,8 @@ function onDataReceived(text) {
     list();
   } else if (word === "add") {
     add(textArray);
+  } else if (word === "remove") {
+    remove(textArray);
   } else {
     unknownCommand(word);
   }
@@ -91,7 +93,10 @@ function help() {
     `Available commands are:
     hello or hello yourName (to welcome)
     quit or exit (to exit application)
-    help (to see all commands)`
+    help (to see all commands)
+    list (to see tasks)
+    add anything (to add tasks)
+    remove (without anything remove last task with a number remove based on number)`
   );
 }
 
@@ -121,11 +126,28 @@ function list() {
  * @returns {void}
  */
 function add(task) {
-  if (task[0] == "add" || task == "") {
+  if (task[0] == "add" && task[1] == "") {
     console.log("Error add what to add!");
   } else {
     listOfTasks.push(task[1]);
     console.log("added");
+  }
+}
+
+/**
+ * @param  {string} task the text received
+ * remove a task
+ *
+ * @returns {void}
+ */
+function remove(task) {
+  console.log(task[1]);
+  if (task.length == 1) {
+    listOfTasks.pop();
+    console.log("removed last task");
+  } else {
+    listOfTasks.splice(task[1] - 1, 1);
+    console.log("removed");
   }
 }
 
