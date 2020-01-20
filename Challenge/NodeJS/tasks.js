@@ -16,7 +16,7 @@ function startApp(name) {
   console.log("--------------------");
 }
 /* Array of tasks*/
-const listOfTasks = ["clean", "sleep"];
+let listOfTasks = ["clean", "sleep"];
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
@@ -46,7 +46,7 @@ function onDataReceived(text) {
   } else if (word === "list") {
     list();
   } else if (word === "add") {
-    add(word);
+    add(textArray);
   } else {
     unknownCommand(word);
   }
@@ -121,10 +121,11 @@ function list() {
  * @returns {void}
  */
 function add(task) {
-  if (task == "") {
-    console.log(Error);
+  if (task[0] == "add" || task == "") {
+    console.log("Error add what to add!");
   } else {
-    listOfTasks.push(task);
+    listOfTasks.push(task[1]);
+    console.log("added");
   }
 }
 
