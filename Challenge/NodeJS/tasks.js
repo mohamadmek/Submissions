@@ -15,7 +15,8 @@ function startApp(name) {
   console.log(`Welcome to ${name}'s application!`);
   console.log("--------------------");
 }
-
+/* Array of tasks*/
+const listOfTasks = ["clean", "sleep"];
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
@@ -35,7 +36,6 @@ function onDataReceived(text) {
   // text = text.replace(/\n/gi, "")
   text = text.trim();
   let textArray = text.split(" ");
-  console.log(textArray);
   let word = textArray[0];
   if (word === "quit\n" || word === "exit\n") {
     quit();
@@ -109,12 +109,9 @@ function quit() {
  *
  * @returns {void}
  */
-/* Array of tasks*/
-const listOfTasks = [];
+
 function list() {
-  for (let i = 0; i < listOfTasks.length(); i++) {
-    console.log(`${i + 1}-${listOfTasks[i]}`);
-  }
+  listOfTasks.forEach((task, index) => console.log(index + 1 + "-" + task));
 }
 
 /**
