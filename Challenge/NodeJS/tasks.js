@@ -13,15 +13,39 @@ function startApp(name) {
   process.stdin.resume();
   process.stdin.setEncoding("utf8");
   process.stdin.on("data", onDataReceived);
+  if (process.argv[2] != undefined) {
+    database = process.argv[2];
+  } else {
+    database = "database.json";
+  }
+  // write(listOfTasks)
+
+  try {
+    if (fs.existsSync("./" + database)) {
+      fs.readFile("./" + database, function(err, data) {
+        if (err) throw err;
+        listOfTasks = JSON.parse(data);
+      });
+    } else {
+      write(listOfTasks);
+    }
+  } catch (err) {
+    console.error(err);
+  }
   console.log(`Welcome to ${name}'s application!`);
   console.log("--------------------");
 }
 /* Array of tasks*/
 let listOfTasks = ["[✓]clean", "[ ]sleep", "[ ]getmilk"];
-fs.readFile("./database.json", function(err, data) {
-  if (err) throw err;
-  let response = JSON.parse(data);
-});
+
+function write(arr) {
+  try {
+    let data = JSON.stringify(arr);
+    fs.writeFile(database, data, () => {});
+  } catch (err) {
+    console.log(err);
+  }
+}
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
