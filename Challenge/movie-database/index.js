@@ -17,6 +17,11 @@ app.get("/movies/get", (req, res) => {
   res.send({ status: 200, message: "ok", data: movies });
 });
 
+app.get("/movies/get/by-date", (req, res) => {
+  const sortedMovies = movies.sort((a, b) => b.year - a.year);
+  res.send({ status: 200, message: "ok", data: sortedMovies });
+});
+
 app.get("/movies/edit", (req, res) => {
   res.send({ status: 200, message: "ok" });
 });
