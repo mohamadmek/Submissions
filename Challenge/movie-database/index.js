@@ -9,8 +9,35 @@ const movies = [
   { title: "الإرهاب والكباب‎", year: 1992, rating: 6.2 }
 ];
 
-app.get("/movies/add", (req, res) => {
-  res.send({ status: 200, message: "ok" });
+app.get("/movies/add?", (req, res) => {
+  let year = req.query.year;
+  let rating = req.query.rating;
+  let intRating = parseInt(rating);
+  let intYear = parseInt(year);
+  let arrYear = year.split("");
+  console.log(arrYear.length);
+  function yearCheck() {
+    if (arrYear.length == 4 && req.query.year) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  if (req.query.title && yearCheck() && req.query.rating) {
+    movies.push({ title: req.query.title, year: intYear, rating: intRating });
+    res.send({ status: 200, message: "ok", data: movies });
+  } else if (req.query.title && yearCheck()) {
+    movies.push({ title: req.query.title, year: intYear, rating: 4 });
+    res.send({ status: 200, message: "ok", data: movies });
+  } else {
+    res.send({
+      status: 403,
+      error: true,
+      message: "you cannot create a movie without providing a title and a year"
+    });
+  }
+  // movies.push({title: req.query.t, year: req.query.y, rating: req.query.r})
 });
 
 app.get("/movies/get", (req, res) => {
