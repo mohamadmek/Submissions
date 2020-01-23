@@ -32,6 +32,20 @@ app.get("/movies/get/by-title", (req, res) => {
   res.send({ status: 200, message: "ok", data: sortedMoviesTitle });
 });
 
+app.get("/movies/get/:id", (req, res) => {
+  movies.forEach((movie, index) => {
+    if (index == req.params.id) {
+      res.send({ status: 200, message: "ok", data: movie });
+    } else {
+      res.send({
+        status: 404,
+        error: true,
+        message: `the movie ${req.params.id} does not exist`
+      });
+    }
+  });
+});
+
 app.get("/movies/edit", (req, res) => {
   res.send({ status: 200, message: "ok" });
 });
