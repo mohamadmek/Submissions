@@ -18,8 +18,18 @@ app.get("/movies/get", (req, res) => {
 });
 
 app.get("/movies/get/by-date", (req, res) => {
-  const sortedMovies = movies.sort((a, b) => b.year - a.year);
+  const sortedMovies = movies.sort((a, b) => a.year - b.year);
   res.send({ status: 200, message: "ok", data: sortedMovies });
+});
+
+app.get("/movies/get/by-rating", (req, res) => {
+  const sortedMoviesRating = movies.sort((a, b) => b.rating - a.rating);
+  res.send({ status: 200, message: "ok", data: sortedMoviesRating });
+});
+
+app.get("/movies/get/by-title", (req, res) => {
+  const sortedMoviesTitle = movies.sort((a, b) => a.title - b.title);
+  res.send({ status: 200, message: "ok", data: sortedMoviesTitle });
 });
 
 app.get("/movies/edit", (req, res) => {
