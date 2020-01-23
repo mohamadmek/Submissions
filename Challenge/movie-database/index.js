@@ -70,8 +70,34 @@ app.get("/movies/get/:id", (req, res) => {
   });
 });
 
-app.get("/movies/edit", (req, res) => {
-  res.send({ status: 200, message: "ok" });
+app.get("/movies/update/:id?", (req, res) => {
+  let idInt = parseInt(req.params.id);
+  if (idInt < movies.length && idInt >= 0) {
+    if (req.query.title) {
+      movies[req.params.id].title = req.query.title;
+    } else {
+      movies[req.params.id].title = movies[req.params.id].title;
+    }
+
+    if (req.query.year) {
+      movies[req.params.id].year = req.query.year;
+    } else {
+      movies[req.params.id].year = movies[req.params.id].year;
+    }
+
+    if (req.query.rating) {
+      movies[req.params.id].rating = req.query.rating;
+    } else {
+      movies[req.params.id].rating = movies[req.params.id].rating;
+    }
+  } else {
+    res.send({
+      status: 404,
+      error: true,
+      message: `the movie ${req.params.id} does not exist`
+    });
+  }
+  res.send({ status: 200, message: "ok", data: movies });
 });
 
 app.get("/movies/delete/:id", (req, res) => {
