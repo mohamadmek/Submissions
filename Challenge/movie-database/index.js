@@ -15,7 +15,6 @@ app.get("/movies/add?", (req, res) => {
   let intRating = parseInt(rating);
   let intYear = parseInt(year);
   let arrYear = year.split("");
-  console.log(arrYear.length);
   function yearCheck() {
     if (arrYear.length == 4 && req.query.year) {
       return true;
@@ -23,7 +22,6 @@ app.get("/movies/add?", (req, res) => {
       return false;
     }
   }
-
   if (req.query.title && yearCheck() && req.query.rating) {
     movies.push({ title: req.query.title, year: intYear, rating: intRating });
     res.send({ status: 200, message: "ok", data: movies });
@@ -37,7 +35,6 @@ app.get("/movies/add?", (req, res) => {
       message: "you cannot create a movie without providing a title and a year"
     });
   }
-  // movies.push({title: req.query.t, year: req.query.y, rating: req.query.r})
 });
 
 app.get("/movies/get", (req, res) => {
@@ -77,8 +74,17 @@ app.get("/movies/edit", (req, res) => {
   res.send({ status: 200, message: "ok" });
 });
 
-app.get("/movies/delete", (req, res) => {
-  res.send({ status: 200, message: "ok" });
+app.get("/movies/delete/:id", (req, res) => {
+  if (req.params.id < movies.length && req.params.id >= 0) {
+    movies.splice(req.params.id, 1);
+    res.send({ status: 200, message: "ok", data: movies });
+  } else {
+    res.send({
+      status: 404,
+      error: true,
+      message: `the movie ${req.params.id} does not exist`
+    });
+  }
 });
 
 app.get("/test", (req, res) => {
