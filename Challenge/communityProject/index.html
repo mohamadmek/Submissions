@@ -6,15 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Evolve</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <header>
       <div class="header-img">
         <nav>
           <div class="left-nav">
-            <div><a href="">Home</a></div>
-            <div><a href="">News & Events</a></div>
-            <div><a href="">Contact Us</a></div>
+            <div class="link-nav">
+              <div class="h1"></div>
+              <a class="a1" href="index.html">Home</a> class="a1">
+            </div>
+            <div class="link-nav">
+              <div class="h2"></div>
+              <a class="a2" href="events.html">Events</a>
+            </div>
+            <div class="link-nav">
+              <div class="h3"></div>
+              <a class="a3" href="contact.html">Contact</a>
+            </div>
           </div>
           <div class="right-nav">
             <div class="logo"></div>
@@ -22,64 +35,106 @@
         </nav>
       </div>
     </header>
-    <div class="title">Our courses</div>
+    <div class="courses-title">Our courses</div>
     <section class="table">
       <article class="column">
         <div class="math-img"></div>
         <div class="txt">Math</div>
       </article>
-      <article class="column">
+      <article class="column m_mt20">
         <div class="chemistry-img"></div>
         <div class="txt">Chemistry</div>
       </article>
-      <article class="column">
-        <div class="physiques-img"></div>
+      <article class="column m_mt">
+        <div class="physics-img"></div>
         <div class="txt">Physics</div>
       </article>
     </section>
-
     <section id="moto">
       <div class="moto-title">We believe in free education</div>
-      <div mini-moto-title>building a bright future day by day</div>
-      <article class="map">
-        <div class="map-image"></div>
-        <div class="map-title">Our history</div>
-        <div class="map-text">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-          assumenda alias a sed accusamus quasi.
-        </div>
-      </article>
-      <article class="map">
-        <div class="map-image"></div>
-        <div class="map-title">Our staff</div>
+      <div class="mini-moto-title">building a bright future day by day</div>
+      <div class="main-map">
+        <article class="map">
+          <div class="map-image1"></div>
+          <div class="map-title">Our history</div>
+          <div class="map-text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
+            assumenda alias a sed accusamus quasi.
+          </div>
+        </article>
+
+        <svg
+          class="s1"
+          width="300px"
+          height="300px"
+          viewBox="0 0 10 10"
+          class="svg-4"
+        >
+          <path d="M3,4.5 C4,2 10,2 11,6" />
+        </svg>
+      </div>
+      <article class="map m_mt20">
+        <div class="map-image2"></div>
+        <div class="map-title">You’re Partnering With Talent</div>
         <div class="map-text">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quas
           explicabo ab tenetur fugit fuga?
         </div>
       </article>
-      <article class="map">
-        <div class="map-image"></div>
+      <svg
+        class="s2"
+        width="300px"
+        height="300px"
+        viewBox="0 0 10 10"
+        class="svg-4"
+      >
+        <path d="M3,4.5 C4,2 10,2 11,6" />
+      </svg>
+      <article class="map m_mt20">
+        <div class="map-image3"></div>
         <div class="map-title">Education matters to us</div>
         <div class="map-text">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam unde
-          quaerat dolores itaque, voluptate aspernatur!
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
+          assumenda alias a sed accusamus quasi.
         </div>
       </article>
     </section>
-    <section class="events">
+    <section id="main-events">
       <div class="events-title">News and Events...</div>
-      <article class="event">
-        <div class="event-image"></div>
-        <div class="event-desc"></div>
-        <div class="event-date"></div>
-      </article>
+      <div class="events">
+        <article class="event">
+          <div class="event-image"></div>
+          <div class="event-desc">The night of ideas</div>
+          <div class="event-date">
+            <i style="margin-right: 15px;" class="fa fa-calendar"></i>February
+            26,2020
+          </div>
+        </article>
+        <article class="event m_mt20">
+          <div class="event-image2"></div>
+          <div class="event-desc">3 days no sleeping</div>
+          <div class="event-date">
+            <i style="margin-right: 15px;" class="fa fa-calendar"></i>February
+            26,2020
+          </div>
+        </article>
+        <article class="event m_mt20">
+          <div class="event-image3"></div>
+          <div class="event-desc">developing a game night</div>
+          <div class="event-date">
+            <i style="margin-right: 15px;" class="fa fa-calendar"></i>February
+            26,2020
+          </div>
+        </article>
+      </div>
     </section>
 
     <footer>
-      <div><i class=""></i></div>
-      <div><i class=""></i></div>
-      <div><i class=""></i></div>
+      <div><i class="fa fa-facebook"></i></div>
+      <div><i class="fa fa-instagram" style="margin: 0 30px;"></i></div>
+      <div><i class="fa fa-twitter"></i></div>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
 
