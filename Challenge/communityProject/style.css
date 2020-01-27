@@ -12,6 +12,7 @@ body {
     rgba(30, 30, 33, 1) 0%,
     rgba(125, 99, 255, 1) 100%
   );
+  overflow-x: hidden;
 }
 /* #7d63ff */
 /* header */
@@ -40,9 +41,7 @@ nav {
 .link-nav:nth-child(2) {
   margin-right: 20px;
 }
-.link-nav:nth-child(3) {
-  margin-right: 400px;
-}
+
 .h1 {
   background-color: #00b2d0;
   height: 100px;
@@ -54,6 +53,10 @@ nav {
 .h3 {
   background-color: #00b2d0;
   height: 90px;
+}
+.h-active {
+  transform: translateY(0) !important;
+  transition: all 1s ease-in;
 }
 .link-nav > a {
   font-size: 18px;
@@ -67,13 +70,35 @@ nav {
   border-bottom-right-radius: 50%;
   box-shadow: 0 8px 6px -6px black;
 }
+.link-nav:first-child {
+  transform: translateY(-100px);
+}
+.link-nav:nth-child(2) {
+  transform: translateY(-80px);
+}
+.link-nav:nth-child(3) {
+  transform: translateY(-100px);
+}
 
 .logo {
   align-self: end;
   background: url("public/logo.png") no-repeat center center/contain;
   width: 100px;
   height: 100px;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  animation: logo-ani 1s linear infinite;
 }
+@keyframes logo-ani {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
 /* /header */
 
 /* our courses */
@@ -112,10 +137,27 @@ nav {
   padding-bottom: 15px;
   cursor: pointer;
 }
-.column-active {
+.c2 {
+  opacity: 0;
+}
+.c2-active {
   transform: scale(1);
-  transition: all 1.4 ease-in;
   opacity: 1;
+  transition: all 0.7s ease-in-out;
+}
+.c1 {
+  transform: translateX(-400px);
+}
+.c3 {
+  transform: translateX(400px);
+}
+.c1-active {
+  transition: all 1.4s ease-in-out;
+  transform: translateX(0);
+}
+.c3-active {
+  transition: all 1.4s ease-in-out;
+  transform: translateX(0);
 }
 .column:hover {
   box-shadow: 0 4px 40px rgba(115, 164, 255, 0.15);
@@ -306,6 +348,17 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 30px;
+}
+
+.footer-icon {
+  cursor: pointer;
+  background: radial-gradient(circle, rgba(125, 99, 255, 1) 100%);
+  padding: 4px;
+}
+.footer-icon:hover {
+  background-color: #fff;
+  color: rgba(125, 99, 255, 1);
+  border-radius: 10px;
 }
 
 @media all and (max-width: 1298px) {

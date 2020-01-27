@@ -63,14 +63,35 @@ nav {
 
 .logo {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 20px;
+  right: 50px;
   align-self: end;
   background: url("public/logo.png") no-repeat center center/contain;
   width: 100px;
   height: 100px;
+  animation: logo-ani 1s linear infinite;
 }
-
+@keyframes logo-ani {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+.h-active {
+  transform: translateY(0) !important;
+  transition: all 1s ease-in;
+}
+.link-nav:first-child {
+  transform: translateY(-100px);
+}
+.link-nav:nth-child(2) {
+  transform: translateY(-80px);
+}
+.link-nav:nth-child(3) {
+  transform: translateY(-100px);
+}
 /* Events */
 .events {
   display: flex;
@@ -138,7 +159,16 @@ footer {
   align-items: center;
   font-size: 30px;
 }
-
+.footer-icon {
+  cursor: pointer;
+  background: radial-gradient(circle, rgba(125, 99, 255, 1) 100%);
+  padding: 4px;
+}
+.footer-icon:hover {
+  background-color: #fff;
+  color: rgba(125, 99, 255, 1);
+  border-radius: 10px;
+}
 @media all and (max-width: 600px) {
   .m_mt20 {
     margin-top: 30px;
